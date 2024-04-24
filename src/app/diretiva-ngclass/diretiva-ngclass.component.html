@@ -1,0 +1,14 @@
+<p>Diretiva *ngClass</p>
+<i class="fa-star" 
+    [class.fa-solid]="meuFavorito"
+    [class.fa-regular]="!meuFavorito"
+    (click)="onClick()"
+></i>
+
+<i class="fa-star" 
+    [ngClass]="{
+        'fa-solid': meuFavorito,
+        'fa-regular': !meuFavorito
+    }"
+    (click)="onClick()"
+></i>
