@@ -12,6 +12,8 @@ import { DiretivaNgstyleComponent } from './diretiva-ngstyle/diretiva-ngstyle.co
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +31,9 @@ import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretiv
     DiretivaNgstyleComponent,
     OperadorElvisComponent,
     NgContentComponent,
-    DiretivasCustomizadasComponent
+    DiretivasCustomizadasComponent,
+    CursosComponent,
+    ExemplosPipesComponent
 
   ],
   templateUrl: './app.component.html',
