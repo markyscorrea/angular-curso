@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CicloComponent } from './ciclo/ciclo.component';
@@ -15,11 +15,13 @@ import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretiv
 import { CursosComponent } from './cursos/cursos.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterModule,
     MeuPrimeiro2Component,
     DataBindingComponent,
     CicloComponent,
@@ -43,6 +45,10 @@ export class AppComponent {
   title = 'angular-curso';
   valor: number = 5;
   deletarCiclo: boolean = false;
+
+  verifica(v: any){
+    console.log(v)
+  }
 
   mudarValor(){
     this.valor++;
