@@ -14,6 +14,10 @@ import { NgContentComponent } from './ng-content/ng-content.component';
 import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
+import { ObservablesComponent } from './observables/observables.component';
+import { CarrinhoComponent } from './compras/carrinho/carrinho.component';
+import { CarrinhoService } from './compras/carrinho.service';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -35,8 +39,10 @@ import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.componen
     NgContentComponent,
     DiretivasCustomizadasComponent,
     CursosComponent,
-    ExemplosPipesComponent
-
+    ExemplosPipesComponent,
+    ObservablesComponent,
+    CarrinhoComponent,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -45,6 +51,14 @@ export class AppComponent {
   title = 'angular-curso';
   valor: number = 5;
   deletarCiclo: boolean = false;
+
+  inputProduto = '';
+
+  qtdAtual: number = 0;
+
+  mostrarContador = true;
+
+  constructor(private carrinhoService: CarrinhoService){}
 
   verifica(v: any){
     console.log(v)
@@ -56,5 +70,11 @@ export class AppComponent {
 
   destruirCiclo(){
     this.deletarCiclo = true;
+  }
+
+
+  adicionarProduto() {
+    this.carrinhoService.adicionarProduto(this.inputProduto);
+    this.inputProduto = '';
   }
 }
